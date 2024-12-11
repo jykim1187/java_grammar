@@ -126,20 +126,178 @@ public class C07Array {
 //        String[] fruits2 ={"apple", "applee", "applef","b"};
 //        System.out.println(Arrays.toString(fruits2));
 
+//          k번째 수 프로그래머스
+//            int[] array={1, 5, 2, 6, 3, 7, 4};
+//        int[][] commands={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+//        int[] answer = new int[commands.length];
+//        for(int i=0; i<commands.length; i++){
+//            int[] temp = new int[commands[i][1]-commands[i][0]+1];
+//            int number=0;
+//            for(int j=commands[i][0]-1; j<commands[i][1];j++){
+//                temp[number] = array[j];
+//                number++;
+//            }
+//            Arrays.sort(temp);
+//            answer[i] = temp[commands[i][2]-1];
+//        }
+//        System.out.println(Arrays.toString(answer));
+
+//        숫자 조합이 합
+//        모두 각기 다른 숫자의 배열이 있을때, 만들어질 수 있는 2개의 조합의 합을 출력하라
+//        int[] intArr ={10,20,30,40,50,60};
+//        StringBuilder sb = new StringBuilder();
+//        for(int i=0; i<intArr.length-1; i++){
+//            for(int j=i+1; j<intArr.length; j++){
+//                sb.append(intArr[i]+intArr[j]).append(" ");
+//            }
+//        }
+//        System.out.println(sb);
+////        배열에 담아서 중복까지제거
+//        int[] intArr2 ={10,20,30,40,50,60};
+//        int[] arr2 = new int[5+4+3+2+1];
+//        int num =0;
+//
+//        for(int i=0; i<intArr2.length-1; i++){
+//            for(int j=i+1; j<intArr2.length; j++){
+//                 arr2[num] =intArr2[i]+intArr2[j];
+//                 num++;
+//            }
+//        }
+//        Arrays.sort(arr2);
+//        System.out.println(Arrays.toString(arr2));
+//// 위에는 배열에 담아 오름차순으로 정리까지 한 상태
+//        int[] arr3 = new int[arr2.length];
+//        int count = 0;
+//        for(int i=0; i<arr2.length; i++){
+//            if(i==arr2.length-1 || arr2[i] != arr2[i+1]){
+//                arr3[count] = arr2[i];
+//                count++;
+//            }
+//        }
+//
+////        배열의 복사
+////        copyOf(배열명,length), copyOfRange(배열명, start, end)
+//        int[] answer1 = Arrays.copyOf(arr3,count);
+//        int[] answer2 = Arrays.copyOfRange(arr3,0,count);
 
 
+//        두개 뽑아서 더하기
+//        int[] numbers ={2,1,3,4,1};
+//        int[] answer2 = new int[numbers.length*numbers.length]; //더한 수들의 조합을 넣기 위해 넉넉잡아 길이를 선정
+//        int index =0;
+//
+//        for(int i=0; i<numbers.length-1; i++){
+//            for(int j=i+1; j<numbers.length;j++){
+//                answer2[index] = numbers[i]+numbers[j];  //두 수의 합을 다 넣는 것
+//                index++; //answer2배열에 인덱스 순서에 맞게  두 수의 합을 넣어야 하므로 answer2의 인덱스를 외부에서 변수로 잡고 for문 한턴 돌때마다 +1처리
+//            }
+//        }
+//
+//        int[] answer3 = new int[index]; //answer3에 index길이 만큼 잡아준다
+//        for(int i=0; i<index; i++){
+//            answer3[i] = answer2[i];
+//        }
+//        Arrays.sort(answer3); //그러면 두 수의 합 수에 딱 맞는 길이의 배열이 됨
+//
+//        int[] answer4 = new int[answer3.length]; //중복을 이제 제거하기 위한 작업. 중복이 제거된 배열을 닮을 answer4의 길이를 넉넉하게 잡음
+//        int index2 = 0;
+//
+//        for(int i=0; i<answer3.length;i++){
+//            if(i==answer3.length-1 || answer3[i] != answer3[i+1]){ //answer3.length-1을 아래조건에 또는 으로 넣는 이유는 i번째가 i+1번째랑 다를때의 i만 answer4배열에 닮은 건데
+//                answer4[index2] = answer3[i]; //i가 제일 마지막 요소에 가면 i+1번쨰 인덱스가 없기때문에 오류가 난다. 따라서 i가 마지막일떄도 answer4배열에 닮기 위해
+//                index2++; // 여기서 anwser4 인덱스를 따로 변수로 안잡고 i로 잡으면 answer3에서 i번째와 i+1번째 다를 때도 answer4[i]에 인덱스가 부여되면서 0값을 가지게 됨
+//            }
+//        }
+//        int[]answer = new int[index2]; //길이를 재조정하기 위해 진짜 마지막으로 index2길이의 배열을 선언하면
+//        for(int i=0; i<index2; i++){
+//            answer[i] = answer4[i]; // 중복이 제거되고 길이가 깔끔한 배열이 만들어짐
+//        }
+//        System.out.println(Arrays.toString(answer));
+//        ---------------------------------------------------------------------------------------------
+//              배열의 검색
+//        int[] arr = {5,3,1,8,7};
+//        int target = 8;
+//        int answer =0;
+//        for(int i=0; i<arr.length; i++){
+//            if(arr[i] == target){
+//                answer =i;
+//                break;
+//            }
+//        }
+//        이진검색(binary search)- 이분탐색
+//        사전에 오름차순정렬이 되어 있어야 이진검색이 가능하다
+//        int[] arr ={1,3,6,8,9,11,15};
+//        System.out.println(Arrays.binarySearch(arr,15));
 
+//        배열간 비교
+//        int[] arr1 = {10,20,30};
+//        int[] arr2 = {10,20,30};
+//        System.out.println(arr1==arr2); //배열의 주소가 나오니까 false
+////        Arrays.equals : 값과 순서까지 동일해야 true
+//        System.out.println(Arrays.equals(arr1,arr2));
+//
+////        이차원 배열의 선언과 할당
+//        int[][] arr1 = new int[2][3];
+//        arr1[0][0] =10;
+//        arr1[0][1] =20;
+//        arr1[0][2] =30;
+//        arr1[1][0] =40;
+//        arr1[1][1] =50;
+//        arr1[1][2] =60;
+//
+//        int[][] arr2= {{10,20,30}, {40,50,60}};
 
+//        가변배열 선언 후 할당
+//           int[][]arr1 =new int[2][];
+//           arr1[0] = new int[2];
+//           arr1[1] = new int[3];
+//           arr1[0][0] = 10;
+//           arr1[0][1] = 20;
+//           arr1[1][0] = 30;
+//           arr1[1][1] = 40;
+//           arr1[1][2] = 50;
+////        가변배열 리터럴 방식
+//            int[][]arr2 ={{10,20},{30,40,50}};
 
+//            [3][4]사이즈의 배열을 선언하고 1~12까지의 숫자값을 각 배열에 순차적으로 할당
+//        {1,2,3,4),{5,6,7,8}...
 
+//        int[][] arr = new int[3][4];
+//
+//        int num =1;
+//        for(int i=0; i<arr.length; i++){
+//            for(int j=0; j<arr[i].length; j++){
+//                arr[i][j] = num;
+//                num++;
+//            }
+//        }
+//        System.out.println(Arrays.deepToString(arr));
 
+//
+//        int[][] arr = new int[3][];
+//
+//        int num =1;
+//        for(int i=0; i<arr.length; i++){
+//            arr[i] = new int[4];
+//            for(int j=0; j<arr[i].length; j++){
+//                arr[i][j] = num;
+//                num++;
+//            }
+//        }
+//        System.out.println(Arrays.deepToString(arr));
 
-
-
+//      행렬의 덧셈
+//        int[][] arr1 = {{1,2},{3,4}};
+//        int[][] arr2 ={{3,4},{5,6}};
+//        int[][] answer= new int[arr1.length][arr1[0].length];
+//
+//        for(int i=0; i<arr1.length; i++){
+//            for(int j=0; j<arr1[i].length; j++){
+//                    answer[i][j] = arr1[i][j] + arr2[i][j];
+//            }
+//        }
 
         }
-
-
     }
 
 

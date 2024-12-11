@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.Scanner;
+package C01Basic;
 
 public class C05LoopStatements {
     public static void main(String[] args) {
